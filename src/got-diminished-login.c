@@ -27,7 +27,7 @@ int main(int argc, char** argv)
   pid_t pid = vfork();
   if (pid == -1)
     {
-      perror("fork");
+      perror("vfork");
       return 1;
     }
   
