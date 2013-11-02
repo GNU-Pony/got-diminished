@@ -1,0 +1,19 @@
+# -*- shell-script -*-
+
+# This module minimising memory usage, when when you are entering
+# your passphrase in and is logged in, of gates-of-tartaros, by
+# replacing the gates-of-tartaros process with a smaller C program
+# that does not have anything for before you have entered your
+# username.
+
+
+_use_ssh ()
+{
+    exec /usr/sbin/got-diminished-ssh "${user}"
+}
+
+_use_login ()
+{
+    exec /usr/sbin/got-diminished-login "${user}" "${tty_settings}"
+}
+
