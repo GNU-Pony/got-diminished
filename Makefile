@@ -10,7 +10,7 @@ OPTIMISE = -Os
 
 
 .PHONY: all
-all: bin/got-diminished-login bin/got-diminished-ssh
+all: got-diminished bin/got-diminished-login bin/got-diminished-ssh
 
 
 got-diminished: src/got-diminished
