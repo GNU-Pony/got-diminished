@@ -1,0 +1,23 @@
+RUNTIME DEPENDENCIES:
+
+<package>	<command>	<reason>
+libc				the C library
+util-linux	login		login is used for authorisation and login
+util-linux	setsid		used to start login in a new session
+openssh		ssh		(optional) used for SSH login
+coreutils	stty		used to restore the tty settings
+
+Extension for gates-of-tartaros, add it as a dependency if your
+package system does not support extension packages.
+
+
+
+BUILD DEPENDENCIES:
+
+<package>	<command>	<when>
+make		make		required
+sed		sed		required
+coreutils	cp		required
+coreutils	install		required
+gcc		gcc		required
+
