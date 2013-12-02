@@ -41,6 +41,8 @@ int main(int argc, char** argv)
     sleep(3);
   free(command);
   
+  execlp("stty", "stty", *(argv + 2), NULL);
+  
   return 0;
 }
 

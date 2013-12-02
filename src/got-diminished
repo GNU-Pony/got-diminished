@@ -9,7 +9,7 @@
 
 _use_ssh ()
 {
-    exec "/usr/libexec/got-diminished-ssh" "${user}"
+    exec "/usr/libexec/got-diminished-ssh" "${user}" "${tty_settings}"
 }
 
 _use_login ()
