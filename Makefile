@@ -2,6 +2,8 @@ PREFIX = /usr
 LIBEXEC = /libexec
 SYSCONF = /etc
 PKGNAME = got-diminished
+DATA = /share
+LICENSES = $(PREFIX)$(DATA)/licenses
 
 OPTIMISE = -Os
 
