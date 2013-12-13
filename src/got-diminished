@@ -15,5 +15,6 @@ _use_ssh ()
 _use_login ()
 {
     exec "/usr/libexec/got-diminished-login" "${user}" "${tty_settings}"
+#    exec "/usr/libexec/got-diminished-cerberus" "${user}" "${tty_settings}"
 }
 
