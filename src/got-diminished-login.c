@@ -1,7 +1,7 @@
 /**
  * got-diminished – Extension for gates-of-tartaros to minimise memory usage after logging in
  * 
- * Copyright © 2013  Mattias Andrée (maandree@member.fsf.org)
+ * Copyright © 2013, 2014  Mattias Andrée (maandree@member.fsf.org)
  * 
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by

@@ -6,6 +6,12 @@ DATA = /share
 LICENSES = $(PREFIX)$(DATA)/licenses
 
 OPTIMISE = -Os
+WARN = -Wall -Wextra -pedantic -Wdouble-promotion -Wformat=2 -Winit-self -Wmissing-include-dirs \
+       -Wfloat-equal -Wmissing-prototypes -Wmissing-declarations -Wtrampolines -Wnested-externs \
+       -Wno-variadic-macros -Wdeclaration-after-statement -Wundef -Wpacked -Wunsafe-loop-optimizations \
+       -Wbad-function-cast -Wwrite-strings -Wlogical-op -Wstrict-prototypes -Wold-style-definition \
+       -Wvector-operation-performance -Wstack-protector -Wunsuffixed-float-constants -Wcast-align \
+       -Wsync-nand -Wshadow -Wredundant-decls -Winline -Wcast-qual -Wsign-conversion -Wstrict-overflow
 
 BINS = login ssh cerberus
 _BINS = $(foreach B, $(BINS), bin/got-diminished-$(B))
@@ -25,7 +31,7 @@ got-diminished: src/got-diminished
 
 bin/%: src/%.c
 	@mkdir -p bin
-	gcc $(OPTIMISE) -o "$@" "$<"
+	gcc $(OPTIMISE) $(WARN) $(CFLAGS) $(CPPFLAGS) $(LDFLAGS) -o "$@" "$<"
 
 
 .PHONY: install
