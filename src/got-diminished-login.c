@@ -35,14 +35,14 @@ int main(int argc, char** argv)
     {
       waitpid(pid, &pid, 0);
       {
-	int n = 0, i;
+	size_t n = 0, i;
 	char* stty = *(argv + 2);
 	char* stty_cmd;
 	
 	while (*(stty + n++))
 	  ;
 	
-	stty_cmd = malloc(5 + n);
+	stty_cmd = malloc((5 + n) * sizeof(char));
 	for (i = 0; i < 5; i++)
 	  *(stty_cmd + i) = *("stty " + i);
 	stty_cmd += 5;
@@ -58,5 +58,7 @@ int main(int argc, char** argv)
     execlp("setsid", "setsid", "-c", "login", "--", *(argv + 1), NULL);
   
   return 0;
+  
+  (void) argc;
 }
 

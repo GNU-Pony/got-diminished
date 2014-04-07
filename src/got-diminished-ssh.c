@@ -22,14 +22,14 @@
 
 int main(int argc, char** argv)
 {
-  int n = 0, i;
+  size_t n = 0, i;
   char* user = *(argv + 1);
   char* command;
   
   while (*(user + n++))
     ;
   
-  command = malloc(14 + n);
+  command = malloc((14 + n) * sizeof(char));
   for (i = 0; i < 14; i++)
     *(command + i) = *("setsid -c ssh " + i);
   command += 14;
@@ -44,5 +44,7 @@ int main(int argc, char** argv)
   execlp("stty", "stty", *(argv + 2), NULL);
   
   return 0;
+  
+  (void) argc;
 }
 
